@@ -1,0 +1,45 @@
+//
+//  PrefixHeader.pch
+//  SecretAlbum
+//
+//  Created by perfay on 2018/10/22.
+//  Copyright © 2018年 perfay. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "DecodeString.h"
+#import "codeObfuscation.h"
+
+#import "Macros.h"
+#import "UIColor+expanded.h"
+#import "UIImage+Common.h"
+#import "UIView+Common.h"
+
+#import <objc/runtime.h>
+#import <MJExtension.h>
+#import "MJRefresh.h"
+#import <Masonry.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <BlocksKit.h>
+#import <FMDB.h>
+#import <JQFMDB.h>
+#import <BlocksKit+UIKit.h>
+#import <SVProgressHUD.h>
+#import <ReactiveObjC.h>
+#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "NSString+base64.h"
+#import "LKSMXCUnit.h"
+#import "PaLKSMXCsswordViewController.h"
+#import <UMPush/UMessage.h>
+#import <UMCommon/UMCommon.h>
+#import "CRC.h"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
