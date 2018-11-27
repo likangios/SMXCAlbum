@@ -1,35 +1,35 @@
 
 #ifndef Demo_codeObfuscation_h
 #define Demo_codeObfuscation_h
-//confuse string at Mon Nov 26 17:49:02 CST 2018
-#define LUCK_addImageToDocument fcBLhOCfIbjUzyUh
-#define LUCK_addToolBar WITlRxaLDswSEWKn
-#define LUCK_checkPassword cjNicBtukpPAkffW
-#define LUCK_cleanAllData fqDDUJpUIOblyDQn
-#define LUCK_deleteAlbumModelWithAbid ZVtEUokrkeeKtfnw
-#define LUCK_deletePhotoModelWithPid FkTqROQhtuxgaSjB
-#define LUCK_dismissAction zbxDYKLUpNBiaPog
-#define LUCK_getCacheImageWithKey cgQoBlnVtJZgCJqs
-#define LUCK_getCameraAuthorizationSatusIsAvailable QKoaOflwcSWHCkmy
-#define LUCK_getFalsePassword jbOzEVkwDCKJghFr
-#define LUCK_getFalsePasswordEnable cNCEXImaKrgZMRdF
-#define LUCK_getMainPassword tmzWqBvKvzbEccyl
-#define LUCK_getMainPasswordEnable xAuiHbTYyriPPNlZ
-#define LUCK_getSecretAlbumModel dWTgJDOGdxtVPqPw
-#define LUCK_getUserType ViwvobrdVaWfzFIx
-#define LUCK_getZhuaPaiEnable hxsBndyxstmySZAY
-#define LUCK_insertAlbumModel ySpuqRQQODeNaRJz
-#define LUCK_insertPhotoModel damyyHzbVhpvlJsz
-#define LUCK_selectPhotoWithType QIfPCpkFMgZVsSnz
-#define LUCK_setFalsePassword PBaERlBGVjlZSGBG
-#define LUCK_setFalsePasswordEnabel OWElsnPzhiESPrKN
-#define LUCK_setMainPassword ZdHzOkNGGVGSMyDo
-#define LUCK_setMainPasswordEnabel rUHNOwsovBVIsGSi
-#define LUCK_setUpRootVC hhzccHImwEUumGpA
-#define LUCK_setUserType HTrNylWDnkpqYuJz
-#define LUCK_setZhuaPaiEnabel vjQpIHmooMIeKjUE
-#define LUCK_shareInstance RIIOiKpsIFfSnxPR
-#define LUCK_showAddImageSheetView sNrqhxjqagQEepRW
-#define LUCK_showPasswordVC osSoiveBCnrqaYpH
-#define LUCK_updatePhotoModel DfiIxQarWeMNyhCv
+//confuse string at Tue Nov 27 09:43:24 CST 2018
+#define LUCK_addImageToDocument tCSEOUnsbwqXFQmQ
+#define LUCK_addToolBar IatEKJFuoFCCGVvH
+#define LUCK_checkPassword eVSeglBiRRjCvUuh
+#define LUCK_cleanAllData EAjZWJmeJYxDNEjQ
+#define LUCK_deleteAlbumModelWithAbid IRvgbyIuTkDURatO
+#define LUCK_deletePhotoModelWithPid vMASqVULhrNXTgsD
+#define LUCK_dismissAction wJCgXsvFIedynjbf
+#define LUCK_getCacheImageWithKey SsRSvikTZmWOqeDr
+#define LUCK_getCameraAuthorizationSatusIsAvailable huwSHOMuFpkGBEqV
+#define LUCK_getFalsePassword gsYTbArCaPTxWeZa
+#define LUCK_getFalsePasswordEnable QgUrVAEjAiCQcktD
+#define LUCK_getMainPassword AaXPGqFZbyjeiMHA
+#define LUCK_getMainPasswordEnable TdMJnxrarPjeBpYx
+#define LUCK_getSecretAlbumModel BEYgrlkinkbfCiuR
+#define LUCK_getUserType drujrbbxAkCuAXPi
+#define LUCK_getZhuaPaiEnable tTpPfvlPochnOnPn
+#define LUCK_insertAlbumModel PImcRvLydScjjUvm
+#define LUCK_insertPhotoModel dslrPnttrOOXYTHj
+#define LUCK_selectPhotoWithType mFbalofGfDzRfycs
+#define LUCK_setFalsePassword qnSIWMSEECPCyeLT
+#define LUCK_setFalsePasswordEnabel sytsMCEAFAtytjWa
+#define LUCK_setMainPassword cXwQUlbKlaPtxkAi
+#define LUCK_setMainPasswordEnabel lrKveCbDMsUNubJL
+#define LUCK_setUpRootVC oGapqyyQXUyMGCuN
+#define LUCK_setUserType DwcTmIHKZGLDTfsL
+#define LUCK_setZhuaPaiEnabel owFEwbAxfAMvqhGl
+#define LUCK_shareInstance rngZxPmCajeRIBkj
+#define LUCK_showAddImageSheetView ShsEcdfnjVbJTXDa
+#define LUCK_showPasswordVC gbhsADtJuytBtFkR
+#define LUCK_updatePhotoModel oTiEmqffvPHGzoMk
 #endif

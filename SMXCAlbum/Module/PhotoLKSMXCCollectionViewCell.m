@@ -25,7 +25,7 @@
             make.edges.equalTo(self.contentView);
         }];
         UIImageView *icon = [UIImageView new];
-        icon.image = [UIImage imageNamed:NEDecodeOcString(lobzWACBOpKciXyi,sizeof(lobzWACBOpKciXyi))];
+        icon.image = [UIImage imageNamed:@"cell_selected"];
         [self.selectedVw addSubview:icon];
         [icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.bottom.mas_offset(-3);

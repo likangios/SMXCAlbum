@@ -55,7 +55,6 @@
 
 /* Begin PBXBuildFile section */
 		2BF2830F7228AA1AAC055D4F /* libPods-SMXCAlbum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA63082F9A806B4F70A95A7 /* libPods-SMXCAlbum.a */; };
-		53B7863757BC0D8E1B58CD0E /* libPods-SecretAlbum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09548C4C2B67B7B8093216B /* libPods-SecretAlbum.a */; };
 		792EBE5A217DC5BB007953A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EBE59217DC5BB007953A1 /* AppDelegate.m */; };
 		792EBE5D217DC5BB007953A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EBE5C217DC5BB007953A1 /* ViewController.m */; };
 		792EBE60217DC5BB007953A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792EBE5E217DC5BB007953A1 /* Main.storyboard */; };
@@ -97,6 +96,9 @@
 		79356F0F21ABC4DE00A78608 /* restore.sh in Resources */ = {isa = PBXBuildFile; fileRef = 79356F0A21ABC4DE00A78608 /* restore.sh */; };
 		79356F1021ABC4DE00A78608 /* clean.sh in Resources */ = {isa = PBXBuildFile; fileRef = 79356F0B21ABC4DE00A78608 /* clean.sh */; };
 		79356F2921ABC61900A78608 /* CRC.c in Sources */ = {isa = PBXBuildFile; fileRef = 79356F2821ABC61900A78608 /* CRC.c */; };
+		79356F3421ACD36A00A78608 /* DecodeStringMethod.list in Resources */ = {isa = PBXBuildFile; fileRef = 79356F3121ACD36900A78608 /* DecodeStringMethod.list */; };
+		79356F3521ACD36A00A78608 /* func.list in Resources */ = {isa = PBXBuildFile; fileRef = 79356F3221ACD36A00A78608 /* func.list */; };
+		79356F3621ACD36A00A78608 /* DecodeStringlist.list in Resources */ = {isa = PBXBuildFile; fileRef = 79356F3321ACD36A00A78608 /* DecodeStringlist.list */; };
 		79358C772181ABA2000D6FE4 /* MineLKSMXCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79358C762181ABA2000D6FE4 /* MineLKSMXCTableViewCell.m */; };
 		79B778B22186F3C8003E01B3 /* ChangeLKSMXCPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B778B12186F3C8003E01B3 /* ChangeLKSMXCPasswordViewController.m */; };
 		79B778B52186FF83003E01B3 /* FixLKSMXCIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B778B42186FF83003E01B3 /* FixLKSMXCIconViewController.m */; };
@@ -112,7 +114,6 @@
 
 /* Begin PBXFileReference section */
 		076909281AB85708F8F7416D /* Pods-SMXCAlbum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMXCAlbum.release.xcconfig"; path = "Pods/Target Support Files/Pods-SMXCAlbum/Pods-SMXCAlbum.release.xcconfig"; sourceTree = "<group>"; };
-		2A436234EF36E21C5247126B /* Pods-SecretAlbum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretAlbum.release.xcconfig"; path = "Pods/Target Support Files/Pods-SecretAlbum/Pods-SecretAlbum.release.xcconfig"; sourceTree = "<group>"; };
 		5AA63082F9A806B4F70A95A7 /* libPods-SMXCAlbum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SMXCAlbum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		792EBE55217DC5BB007953A1 /* SMXCAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMXCAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		792EBE58217DC5BB007953A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -193,10 +194,10 @@
 		79356F2621ABC5FD00A78608 /* DecodeString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecodeString.h; sourceTree = "<group>"; };
 		79356F2721ABC61900A78608 /* CRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRC.h; sourceTree = "<group>"; };
 		79356F2821ABC61900A78608 /* CRC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CRC.c; sourceTree = "<group>"; };
-		79356F2A21ABC7ED00A78608 /* DecodeStringlist.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DecodeStringlist.list; path = SecretAlbum/DecodeStringlist.list; sourceTree = SOURCE_ROOT; };
-		79356F2B21ABC7ED00A78608 /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = func.list; path = SecretAlbum/func.list; sourceTree = SOURCE_ROOT; };
-		79356F2C21ABC7ED00A78608 /* DecodeStringMethod.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DecodeStringMethod.list; path = SecretAlbum/DecodeStringMethod.list; sourceTree = SOURCE_ROOT; };
 		79356F3021ABFAFD00A78608 /* SMXCAlbum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMXCAlbum.entitlements; sourceTree = "<group>"; };
+		79356F3121ACD36900A78608 /* DecodeStringMethod.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DecodeStringMethod.list; path = SMXCAlbum/DecodeStringMethod.list; sourceTree = SOURCE_ROOT; };
+		79356F3221ACD36A00A78608 /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = func.list; path = SMXCAlbum/func.list; sourceTree = SOURCE_ROOT; };
+		79356F3321ACD36A00A78608 /* DecodeStringlist.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DecodeStringlist.list; path = SMXCAlbum/DecodeStringlist.list; sourceTree = SOURCE_ROOT; };
 		79358C752181ABA2000D6FE4 /* MineLKSMXCTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineLKSMXCTableViewCell.h; sourceTree = "<group>"; };
 		79358C762181ABA2000D6FE4 /* MineLKSMXCTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineLKSMXCTableViewCell.m; sourceTree = "<group>"; };
 		79B778B02186F3C8003E01B3 /* ChangeLKSMXCPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeLKSMXCPasswordViewController.h; sourceTree = "<group>"; };
@@ -214,8 +215,6 @@
 		79B779572188559A003E01B3 /* Icon-3-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-3-120.png"; sourceTree = "<group>"; };
 		79B779582188559A003E01B3 /* Icon-3-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-3-180.png"; sourceTree = "<group>"; };
 		862CC1C9E744B6EA58211E92 /* Pods-SMXCAlbum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMXCAlbum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SMXCAlbum/Pods-SMXCAlbum.debug.xcconfig"; sourceTree = "<group>"; };
-		9CA19928B5FB67A6704715DF /* Pods-SecretAlbum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretAlbum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SecretAlbum/Pods-SecretAlbum.debug.xcconfig"; sourceTree = "<group>"; };
-		D09548C4C2B67B7B8093216B /* libPods-SecretAlbum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecretAlbum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +222,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B7863757BC0D8E1B58CD0E /* libPods-SecretAlbum.a in Frameworks */,
 				2BF2830F7228AA1AAC055D4F /* libPods-SMXCAlbum.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,9 +407,9 @@
 		79356F0621ABC4DE00A78608 /* sh */ = {
 			isa = PBXGroup;
 			children = (
-				79356F2B21ABC7ED00A78608 /* func.list */,
-				79356F2A21ABC7ED00A78608 /* DecodeStringlist.list */,
-				79356F2C21ABC7ED00A78608 /* DecodeStringMethod.list */,
+				79356F3321ACD36A00A78608 /* DecodeStringlist.list */,
+				79356F3121ACD36900A78608 /* DecodeStringMethod.list */,
+				79356F3221ACD36A00A78608 /* func.list */,
 				79356F0721ABC4DE00A78608 /* FirstScript.sh */,
 				79356F0821ABC4DE00A78608 /* confuse.sh */,
 				79356F0921ABC4DE00A78608 /* replace.sh */,
@@ -461,7 +459,6 @@
 		83B48E257922B72A148E2F5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D09548C4C2B67B7B8093216B /* libPods-SecretAlbum.a */,
 				5AA63082F9A806B4F70A95A7 /* libPods-SMXCAlbum.a */,
 			);
 			name = Frameworks;
@@ -470,8 +467,6 @@
 		AC87CC639567377B56C45D65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9CA19928B5FB67A6704715DF /* Pods-SecretAlbum.debug.xcconfig */,
-				2A436234EF36E21C5247126B /* Pods-SecretAlbum.release.xcconfig */,
 				862CC1C9E744B6EA58211E92 /* Pods-SMXCAlbum.debug.xcconfig */,
 				076909281AB85708F8F7416D /* Pods-SMXCAlbum.release.xcconfig */,
 			);
@@ -562,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79356F3421ACD36A00A78608 /* DecodeStringMethod.list in Resources */,
 				79B77948218853DE003E01B3 /* Icon-1-180.png in Resources */,
 				79356F0F21ABC4DE00A78608 /* restore.sh in Resources */,
 				792EBE65217DC5BC007953A1 /* LaunchScreen.storyboard in Resources */,
@@ -569,6 +565,7 @@
 				79B7792121885382003E01B3 /* Icon-2-180.png in Resources */,
 				79B77946218853DE003E01B3 /* Icon-1-120.png in Resources */,
 				79356F0D21ABC4DE00A78608 /* confuse.sh in Resources */,
+				79356F3621ACD36A00A78608 /* DecodeStringlist.list in Resources */,
 				79B7792721885382003E01B3 /* Icon-2-120.png in Resources */,
 				79356F0E21ABC4DE00A78608 /* replace.sh in Resources */,
 				79356F0C21ABC4DE00A78608 /* FirstScript.sh in Resources */,
@@ -576,6 +573,7 @@
 				79B7795A2188559A003E01B3 /* Icon-3-180.png in Resources */,
 				79B779592188559A003E01B3 /* Icon-3-120.png in Resources */,
 				792EBE60217DC5BB007953A1 /* Main.storyboard in Resources */,
+				79356F3521ACD36A00A78608 /* func.list in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

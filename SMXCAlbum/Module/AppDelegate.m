@@ -29,7 +29,7 @@
     else{
         [self LUCK_setUpRootVC];
     }
-    [UMConfigure initWithAppkey:@"5be146e3f1f55638620003f6" channel:NEDecodeOcString(suKylcaMCVVZsiWS,sizeof(suKylcaMCVVZsiWS))];
+    [UMConfigure initWithAppkey:@"5be146e3f1f55638620003f6" channel:@"App Store"];
     UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
     entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionSound|UMessageAuthorizationOptionAlert;
     if (@available(iOS 10.0, *)) {

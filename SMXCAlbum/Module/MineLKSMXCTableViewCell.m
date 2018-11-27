@@ -47,7 +47,7 @@
     if (!_titlelabel) {
         _titlelabel = [UILabel new];
         _titlelabel.font = [UIFont systemFontOfSize:16];
-        _titlelabel.textColor = [UIColor colorWithHexString:NEDecodeOcString(MOyyvsszTECcRigl,sizeof(MOyyvsszTECcRigl))];
+        _titlelabel.textColor = [UIColor colorWithHexString:@"000000"];
         _titlelabel.textAlignment = NSTextAlignmentLeft;
     }
     return _titlelabel;

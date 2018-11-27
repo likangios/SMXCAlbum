@@ -25,7 +25,7 @@
     if (!_confirmButton) {
         _confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_confirmButton setTitle:@"阅读并同意隐私政策" forState:UIControlStateNormal];
-        [_confirmButton setTitleColor:[UIColor colorWithHexString:NEDecodeOcString(zswzBnzEOqUeOEbD,sizeof(zswzBnzEOqUeOEbD))] forState:UIControlStateNormal];
+        [_confirmButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         _confirmButton.layer.cornerRadius = 20;
         _confirmButton.backgroundColor = [UIColor purpleColor];
     }
@@ -42,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSUserDefaults standardUserDefaults] setObject:NEDecodeOcString(nyoRZBfWDXvtTxGE,sizeof(nyoRZBfWDXvtTxGE)) forKey:NEDecodeOcString(eAvzPRZmPaYDjppa,sizeof(eAvzPRZmPaYDjppa))];
+    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"first"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self.view addSubview:self.webView];
     [self.view addSubview:self.confirmButton];

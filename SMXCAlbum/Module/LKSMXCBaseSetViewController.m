@@ -51,7 +51,7 @@
     [self creatCustomNavBar];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [self bottomLine];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(adjustStatusBar) name:NEDecodeOcString(eVBtEunMvScLeogz,sizeof(eVBtEunMvScLeogz)) object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(adjustStatusBar) name:@"UIApplicationDidChangeStatusBarFrameNotification" object:nil];
     self.statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
@@ -182,7 +182,7 @@
 {
     if (!_bottomLine) {
         _bottomLine = [[UIView alloc] init];
-        //_bottomLine.backgroundColor = [UIColor colorWithHexString:NEDecodeOcString(oKCrPUKCJEtTGqfa,sizeof(oKCrPUKCJEtTGqfa))];
+        //_bottomLine.backgroundColor = [UIColor colorWithHexString:@"e8e8e8"];
         [self.customNavBar addSubview:_bottomLine];
         [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(0);
@@ -201,7 +201,7 @@
 
 - (void)addDefaultBackItem{
     
-    [self setLeftItemImage:NEDecodeOcString(yuxQtDdlyEwVHsLp,sizeof(yuxQtDdlyEwVHsLp))];
+    [self setLeftItemImage:@"back"];
     
 }
 - (void)setNavBarTitle:(NSString *)title{

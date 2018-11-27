@@ -44,7 +44,7 @@
 - (UIButton *)addButton{
     if (!_addButton) {
         _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_addButton setImage:[UIImage imageNamed:NEDecodeOcString(budUdyqZMlLYHaOL,sizeof(budUdyqZMlLYHaOL))] forState:UIControlStateNormal];
+        [_addButton setImage:[UIImage imageNamed:@"addImage"] forState:UIControlStateNormal];
     }
     return _addButton;
 }
@@ -62,7 +62,7 @@
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        [_collectionView registerClass:[PhotoLKSMXCCollectionViewCell class] forCellWithReuseIdentifier:NEDecodeOcString(JnhhYoAyjFFpfAQY,sizeof(JnhhYoAyjFFpfAQY))];
+        [_collectionView registerClass:[PhotoLKSMXCCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoLKSMXCCollectionViewCell"];
     }
     return _collectionView;
 }
@@ -191,7 +191,7 @@
         }
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.delegate = self;
-            picker.mediaTypes = @[NEDecodeOcString(MniRoImeuaVjZiRO,sizeof(MniRoImeuaVjZiRO))];
+            picker.mediaTypes = @[@"public.image"];
             picker.allowsEditing = YES;
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self presentViewController:picker animated:YES completion:NULL];
@@ -262,7 +262,7 @@
     return self.dataArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    PhotoLKSMXCCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NEDecodeOcString(JnhhYoAyjFFpfAQY,sizeof(JnhhYoAyjFFpfAQY)) forIndexPath:indexPath];
+    PhotoLKSMXCCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoLKSMXCCollectionViewCell" forIndexPath:indexPath];
     PhotoLKSMXCModel *model = self.dataArray[indexPath.row];
     UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:model.imgName];
     if (cacheImage == nil) {
@@ -289,12 +289,12 @@
   
             NSMutableArray *array = [NSMutableArray array];
             for (PhotoLKSMXCModel *model in self.dataArray) {
-                YBImageBrowserModel *data = [YBImageBrowserModel new];
-                data.image = [LKSMXCUnit LUCK_getCacheImageWithKey:model.imgName];
+                YBImageBrowseCellData *data = [YBImageBrowseCellData new];
+                data.sourceObject = [LKSMXCUnit LUCK_getCacheImageWithKey:model.imgName];
                 [array addObject:data];
             }
         YBImageBrowser *imageBrowser = [YBImageBrowser new];
-        imageBrowser.dataArray = array;
+        imageBrowser.dataSourceArray = array;
         imageBrowser.currentIndex = indexPath.row;
         [imageBrowser show];
     }
@@ -328,17 +328,17 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 - (void)addImageToDocument:(UIImage *)image{
-    NSString *imageName = [NSString stringWithFormat:NEDecodeOcString(kvlilwYzXzLmWZOA,sizeof(kvlilwYzXzLmWZOA)),[[NSDate date] timeIntervalSince1970],arc4random()%1000000];
+    NSString *imageName = [NSString stringWithFormat:@"%f_%d",[[NSDate date] timeIntervalSince1970],arc4random()%1000000];
     [[SDImageCache sharedImageCache] storeImage:image forKey:[[imageName SAblum_base64Encode] SAblum_md5] completion:^{
         PhotoLKSMXCModel *lastModel = self.dataArray.lastObject;
         PhotoLKSMXCModel *model = [[PhotoLKSMXCModel alloc]init];
         model.imgName = [[imageName SAblum_base64Encode] SAblum_md5];
         model.parentId = self.albumId;
         if (lastModel) {
-            model.pid = [NSString stringWithFormat:NEDecodeOcString(qNnfPBHoyNFHGRoA,sizeof(qNnfPBHoyNFHGRoA)),lastModel.pid.integerValue + 1];
+            model.pid = [NSString stringWithFormat:@"%ld",lastModel.pid.integerValue + 1];
         }
         else{
-            model.pid = NEDecodeOcString(faXpwnUKqAfWjVeY,sizeof(faXpwnUKqAfWjVeY));
+            model.pid = @"1000";
         }
         [[LocalLKSMXCDataManager LUCK_shareInstance] LUCK_insertPhotoModel:model];
         [self.dataArray addObject:model];

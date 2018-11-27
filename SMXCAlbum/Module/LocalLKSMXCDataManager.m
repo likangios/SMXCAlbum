@@ -14,9 +14,9 @@
 
 @end
 
-#define AlbumTable NEDecodeOcString(QEjNlGKlpcikKvyF,sizeof(QEjNlGKlpcikKvyF))
+#define AlbumTable @"albumTableName"
 
-#define PhotoTable NEDecodeOcString(vHWlRIXmxCJdCgtW,sizeof(vHWlRIXmxCJdCgtW))
+#define PhotoTable @"photoTableName"
 
 static LocalLKSMXCDataManager *_manager;
 @implementation LocalLKSMXCDataManager
@@ -33,7 +33,7 @@ static LocalLKSMXCDataManager *_manager;
         self.jqdb = [JQFMDB shareDatabase];
         [self.jqdb open];
         if (![self.jqdb jq_isExistTable:AlbumTable]) {
-            [self.jqdb jq_createTable:AlbumTable dicOrModel:[AlbumLKSMXCModel class] excludeName:@[NEDecodeOcString(UWIvoClbhBaKgdXL,sizeof(UWIvoClbhBaKgdXL)),NEDecodeOcString(KAEspztNeAaFhOVV,sizeof(KAEspztNeAaFhOVV))]];
+            [self.jqdb jq_createTable:AlbumTable dicOrModel:[AlbumLKSMXCModel class] excludeName:@[@"photos",@"albumCount"]];
         }
         if (![self.jqdb jq_isExistTable:PhotoTable]) {
             [self.jqdb jq_createTable:PhotoTable dicOrModel:[PhotoLKSMXCModel class]];
@@ -46,10 +46,10 @@ static LocalLKSMXCDataManager *_manager;
     __block NSArray *resultArray = [NSArray array];
     NSString *splString;
     if ([LKSMXCUnit LUCK_getUserType] == type_guest) {
-        splString = [NSString stringWithFormat:NEDecodeOcString(sEEDItgquAVxtdmB,sizeof(sEEDItgquAVxtdmB))];
+        splString = [NSString stringWithFormat:@"where isSecret = '0'"];
     }
     else{
-        splString = [NSString stringWithFormat:NEDecodeOcString(kctApQNiZfomHXUq,sizeof(kctApQNiZfomHXUq))];
+        splString = [NSString stringWithFormat:@"where isSecret = '1' ORDER BY abid asc"];
     }
     [self.jqdb jq_inDatabase:^{
         resultArray = [self.jqdb jq_lookupTable:AlbumTable dicOrModel:[AlbumLKSMXCModel class] whereFormat:splString];
@@ -63,7 +63,7 @@ static LocalLKSMXCDataManager *_manager;
 }
 - (AlbumLKSMXCModel *)LUCK_getSecretAlbumModel{
     __block NSArray *resultArray = [NSArray array];
-    NSString *splString = [NSString stringWithFormat:NEDecodeOcString(CxuPzPfQMWTdfkeJ,sizeof(CxuPzPfQMWTdfkeJ))];
+    NSString *splString = [NSString stringWithFormat:@"where abid = '999'"];
     [self.jqdb jq_inDatabase:^{
         resultArray = [self.jqdb jq_lookupTable:AlbumTable dicOrModel:[AlbumLKSMXCModel class] whereFormat:splString];
     }];
@@ -88,7 +88,7 @@ static LocalLKSMXCDataManager *_manager;
 }
 - (BOOL)LUCK_deleteAlbumModelWithAbid:(NSString *)abid{
     __block BOOL success = NO;
-        NSString *splString = [NSString stringWithFormat:NEDecodeOcString(PBdcxavpAuNOlwXg,sizeof(PBdcxavpAuNOlwXg)),abid];
+        NSString *splString = [NSString stringWithFormat:@"where abid = '%@'",abid];
     [self.jqdb jq_inDatabase:^{
         success = [self.jqdb jq_deleteTable:AlbumTable whereFormat:splString];
     }];
@@ -100,7 +100,7 @@ static LocalLKSMXCDataManager *_manager;
 
 - (NSArray <PhotoLKSMXCModel *>*)getAllPhotosModelWithParentId:(NSString *)parentId{
     __block NSArray *resultArray = [NSArray array];
-    NSString *splString = [NSString stringWithFormat:NEDecodeOcString(iaivIcnwczbMRwVc,sizeof(iaivIcnwczbMRwVc)),parentId];
+    NSString *splString = [NSString stringWithFormat:@"where parentId = '%@'",parentId];
     [self.jqdb jq_inDatabase:^{
         resultArray = [self.jqdb jq_lookupTable:PhotoTable dicOrModel:[PhotoLKSMXCModel class] whereFormat:splString];
     }];
@@ -108,7 +108,7 @@ static LocalLKSMXCDataManager *_manager;
 }
 - (BOOL)LUCK_updatePhotoModel:(PhotoLKSMXCModel *)model{
     __block BOOL success = NO;
-    NSString *splString = [NSString stringWithFormat:NEDecodeOcString(lzbUlCkvmNmLDpfX,sizeof(lzbUlCkvmNmLDpfX)),model.pid];
+    NSString *splString = [NSString stringWithFormat:@"where pid = '%@'",model.pid];
     [self.jqdb jq_inDatabase:^{
         success = [self.jqdb jq_updateTable:PhotoTable dicOrModel:model whereFormat:splString];
     }];
@@ -124,7 +124,7 @@ static LocalLKSMXCDataManager *_manager;
 //根据相册删除照片
 - (BOOL)deletePhotoModelWithParentId:(NSString *)parentId{
     __block BOOL success = NO;
-    NSString *splString = [NSString stringWithFormat:NEDecodeOcString(iaivIcnwczbMRwVc,sizeof(iaivIcnwczbMRwVc)),parentId];
+    NSString *splString = [NSString stringWithFormat:@"where parentId = '%@'",parentId];
     [self.jqdb jq_inDatabase:^{
         success = [self.jqdb jq_deleteTable:PhotoTable whereFormat:splString];
     }];
@@ -133,7 +133,7 @@ static LocalLKSMXCDataManager *_manager;
 
 - (BOOL)LUCK_deletePhotoModelWithPid:(NSString *)pid{
     __block BOOL success = NO;
-    NSString *splString = [NSString stringWithFormat:NEDecodeOcString(lzbUlCkvmNmLDpfX,sizeof(lzbUlCkvmNmLDpfX)),pid];
+    NSString *splString = [NSString stringWithFormat:@"where pid = '%@'",pid];
     [self.jqdb jq_inDatabase:^{
         success = [self.jqdb jq_deleteTable:PhotoTable whereFormat:splString];
     }];
@@ -142,7 +142,7 @@ static LocalLKSMXCDataManager *_manager;
 
 - (void)LUCK_cleanAllData{
     if ([self.jqdb jq_deleteTable:AlbumTable]) {
-        [self.jqdb jq_createTable:AlbumTable dicOrModel:[AlbumLKSMXCModel class] excludeName:@[NEDecodeOcString(UWIvoClbhBaKgdXL,sizeof(UWIvoClbhBaKgdXL)),NEDecodeOcString(KAEspztNeAaFhOVV,sizeof(KAEspztNeAaFhOVV))]];
+        [self.jqdb jq_createTable:AlbumTable dicOrModel:[AlbumLKSMXCModel class] excludeName:@[@"photos",@"albumCount"]];
     }
     if ([self.jqdb jq_deleteTable:PhotoTable]) {
         [self.jqdb jq_createTable:PhotoTable dicOrModel:[PhotoLKSMXCModel class]];

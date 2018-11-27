@@ -50,8 +50,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.firstDisplay ++;
     [super viewWillAppear:animated];
-    NSString *first =  [[NSUserDefaults standardUserDefaults] valueForKey:NEDecodeOcString(eAvzPRZmPaYDjppa,sizeof(eAvzPRZmPaYDjppa))];
-    if (![first isEqualToString:NEDecodeOcString(nyoRZBfWDXvtTxGE,sizeof(nyoRZBfWDXvtTxGE))]) {
+    NSString *first =  [[NSUserDefaults standardUserDefaults] valueForKey:@"first"];
+    if (![first isEqualToString:@"1"]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             TiaokuanViewController *tiaok = [[TiaokuanViewController alloc]init];
             [self presentViewController:tiaok animated:YES completion:NULL];
@@ -79,15 +79,15 @@
 - (void)addDcChildViewContorller
 {
     NSArray *childArray = @[
-                            @{MallClassKey  : NEDecodeOcString(lUiuAmdbLNWvGwzg,sizeof(lUiuAmdbLNWvGwzg)),
+                            @{MallClassKey  : @"AlbumLKSMXCViewController",
                               MallTitleKey  : @"私密",
-                              MallImgKey    : NEDecodeOcString(UWIvoClbhBaKgdXL,sizeof(UWIvoClbhBaKgdXL)),
-                              MallSelImgKey : NEDecodeOcString(UWIvoClbhBaKgdXL,sizeof(UWIvoClbhBaKgdXL))},
+                              MallImgKey    : @"photos",
+                              MallSelImgKey : @"photos"},
                             
-                            @{MallClassKey  : NEDecodeOcString(PqPVpSNpspqifCVl,sizeof(PqPVpSNpspqifCVl)),
+                            @{MallClassKey  : @"MineLKSMXCViewController",
                               MallTitleKey  : @"设置",
-                              MallImgKey    : NEDecodeOcString(AtcaTVnyRbNVplAK,sizeof(AtcaTVnyRbNVplAK)),
-                              MallSelImgKey : NEDecodeOcString(AtcaTVnyRbNVplAK,sizeof(AtcaTVnyRbNVplAK))}
+                              MallImgKey    : @"settings",
+                              MallSelImgKey : @"settings"}
                             ];
     self.tabBar.tintColor = DCBGColor;
     [childArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -99,7 +99,7 @@
         item.image = [UIImage imageNamed:dict[MallImgKey]];
 //        item.selectedImage = [[UIImage imageNamed:dict[MallSelImgKey]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         [item setTitleTextAttributes:@{NSForegroundColorAttributeName:DCBGColor} forState:UIControlStateSelected];
-        [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:NEDecodeOcString(ISiYWwbYtliheHeu,sizeof(ISiYWwbYtliheHeu))]} forState:UIControlStateNormal];
+        [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"7e7e7e"]} forState:UIControlStateNormal];
         [self addChildViewController:nav];
         // 添加tabBarItem至数组
         [self.tabBarItems addObject:vc.tabBarItem];
@@ -119,7 +119,7 @@
     //点击tabBarItem动画
     [self tabBarButtonClick:[self getTabBarButton]];
     if ([self.childViewControllers.firstObject isEqual:viewController]) { //根据tabBar的内存地址找到美信发通知jump
-        [[NSNotificationCenter defaultCenter] postNotificationName:NEDecodeOcString(ZCyioeOWEkHqKtyi,sizeof(ZCyioeOWEkHqKtyi)) object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"jump" object:nil];
     }
 
     
@@ -128,7 +128,7 @@
     NSMutableArray *tabBarButtons = [[NSMutableArray alloc]initWithCapacity:0];
 
     for (UIView *tabBarButton in self.tabBar.subviews) {
-        if ([tabBarButton isKindOfClass:NSClassFromString(NEDecodeOcString(zcEkFNryOdTCxjsa,sizeof(zcEkFNryOdTCxjsa)))]){
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]){
             [tabBarButtons addObject:tabBarButton];
         }
     }
@@ -141,10 +141,10 @@
 - (void)tabBarButtonClick:(UIControl *)tabBarButton
 {
     for (UIView *imageView in tabBarButton.subviews) {
-        if ([imageView isKindOfClass:NSClassFromString(NEDecodeOcString(pvNJaHQLUhIEhZSb,sizeof(pvNJaHQLUhIEhZSb)))]) {
+        if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
             //需要实现的帧动画,这里根据自己需求改动
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
-            animation.keyPath = NEDecodeOcString(NKnMUWJQwvYZCJBR,sizeof(NKnMUWJQwvYZCJBR));
+            animation.keyPath = @"transform.scale";
             animation.values = @[@1.0,@1.1,@0.9,@1.0];
             animation.duration = 0.3;
             animation.calculationMode = kCAAnimationCubic;
@@ -170,7 +170,7 @@
 
 #pragma mark - 移除通知
 - (void)dealloc {
-    [_item removeObserver:self forKeyPath:NEDecodeOcString(GAiLjaCZCEohdfhC,sizeof(GAiLjaCZCEohdfhC))];
+    [_item removeObserver:self forKeyPath:@"badgeValue"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

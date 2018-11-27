@@ -37,7 +37,7 @@
 - (UILabel *)versionLb{
     if (!_versionLb) {
         _versionLb = [UILabel new];
-        _versionLb.textColor = [UIColor colorWithHexString:NEDecodeOcString(MOyyvsszTECcRigl,sizeof(MOyyvsszTECcRigl))];
+        _versionLb.textColor = [UIColor colorWithHexString:@"000000"];
         _versionLb.textAlignment = NSTextAlignmentCenter;
     }
     return _versionLb;
@@ -46,7 +46,7 @@
     if (!_contentLb) {
         _contentLb = [UILabel new];
         _contentLb.font = [UIFont systemFontOfSize:14];
-        _contentLb.textColor = [UIColor colorWithHexString:NEDecodeOcString(MOyyvsszTECcRigl,sizeof(MOyyvsszTECcRigl))];
+        _contentLb.textColor = [UIColor colorWithHexString:@"000000"];
         _contentLb.textAlignment = NSTextAlignmentLeft;
         _contentLb.numberOfLines = 0;
         _contentLb.text = @"这是一款离线应用，所有数据都保存在本地不会上传到任何服务器，这是最安全的保存方式。因此如果你忘记了密码，我们也无法帮助你,请提前备份密码。";
@@ -77,7 +77,7 @@
         make.bottom.mas_equalTo(-80);
     }];
     self.versionLb.text = [NSString stringWithFormat:@"当前版本：%@",APP_VERSION];
-    self.iconImageView.image = [UIImage imageNamed:NEDecodeOcString(QcfLtqOUMnYmRoBD,sizeof(QcfLtqOUMnYmRoBD))];
+    self.iconImageView.image = [UIImage imageNamed:@"AppIcon60x60"];
 }
 
 - (void)didReceiveMemoryWarning {

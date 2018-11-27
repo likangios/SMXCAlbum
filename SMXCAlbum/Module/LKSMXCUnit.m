@@ -30,72 +30,72 @@
 }
 + (UIImage *)LUCK_getCacheImageWithKey:(NSString *)key{
     if (!key.length) {
-        return [UIImage imageNamed:NEDecodeOcString(QXoybhZCsTDlVxbw,sizeof(QXoybhZCsTDlVxbw))];
+        return [UIImage imageNamed:@"no_photos"];
     }
     UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:key];
     if (cacheImage == nil) {
         cacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:key];
     }
     if (cacheImage == nil) {
-        cacheImage = [UIImage imageNamed:NEDecodeOcString(QXoybhZCsTDlVxbw,sizeof(QXoybhZCsTDlVxbw))];
+        cacheImage = [UIImage imageNamed:@"no_photos"];
     }
     return cacheImage;
 }
 //抓拍
 + (void)LUCK_setZhuaPaiEnabel:(BOOL)enable{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(enable) forKey:NEDecodeOcString(UCcUTXuZKKJECTix,sizeof(UCcUTXuZKKJECTix))];
+    [defaults setObject:@(enable) forKey:@"ZhuaPaiEnable"];
     [defaults synchronize];
 }
 + (BOOL)LUCK_getZhuaPaiEnable{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *enable = [defaults objectForKey:NEDecodeOcString(UCcUTXuZKKJECTix,sizeof(UCcUTXuZKKJECTix))];
+    NSNumber *enable = [defaults objectForKey:@"ZhuaPaiEnable"];
     return enable.boolValue;
 }
 //主密码
 + (void)LUCK_setMainPasswordEnabel:(BOOL)enable{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(enable) forKey:NEDecodeOcString(otcHRUKmPqroIilq,sizeof(otcHRUKmPqroIilq))];
+    [defaults setObject:@(enable) forKey:@"mainPWDEnabel"];
     [defaults synchronize];
 }
 + (BOOL)LUCK_getMainPasswordEnable{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *enable = [defaults objectForKey:NEDecodeOcString(otcHRUKmPqroIilq,sizeof(otcHRUKmPqroIilq))];
+    NSNumber *enable = [defaults objectForKey:@"mainPWDEnabel"];
     return enable.boolValue;
 }
 + (void)LUCK_setMainPassword:(NSString *)pwd{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:pwd forKey:NEDecodeOcString(jXViVepRaNPzSbdG,sizeof(jXViVepRaNPzSbdG))];
+    [defaults setObject:pwd forKey:@"mainPWD"];
     [defaults synchronize];
 }
 + (NSString *)LUCK_getMainPassword{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults objectForKey:NEDecodeOcString(jXViVepRaNPzSbdG,sizeof(jXViVepRaNPzSbdG))];
+    return [defaults objectForKey:@"mainPWD"];
 }
 //设置伪密码
 + (void)LUCK_setFalsePasswordEnabel:(BOOL)enable{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(enable) forKey:NEDecodeOcString(obwleeAfuXiIYXIZ,sizeof(obwleeAfuXiIYXIZ))];
+    [defaults setObject:@(enable) forKey:@"falsePWDEnabel"];
     [defaults synchronize];
 }
 + (BOOL)LUCK_getFalsePasswordEnable{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *enable = [defaults objectForKey:NEDecodeOcString(obwleeAfuXiIYXIZ,sizeof(obwleeAfuXiIYXIZ))];
+    NSNumber *enable = [defaults objectForKey:@"falsePWDEnabel"];
     return enable.boolValue;
 }
 + (void)LUCK_setFalsePassword:(NSString *)pwd{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:pwd forKey:NEDecodeOcString(DQHdhPBiRhcnfgLg,sizeof(DQHdhPBiRhcnfgLg))];
+    [defaults setObject:pwd forKey:@"falsePWD"];
     [defaults synchronize];
 }
 + (NSString *)LUCK_getFalsePassword{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults objectForKey:NEDecodeOcString(DQHdhPBiRhcnfgLg,sizeof(DQHdhPBiRhcnfgLg))];
+    return [defaults objectForKey:@"falsePWD"];
 }
 //用户类型
 + (loginType)LUCK_getUserType{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *enable = [defaults objectForKey:NEDecodeOcString(OWeFSeldcMHqYvbZ,sizeof(OWeFSeldcMHqYvbZ))];
+    NSNumber *enable = [defaults objectForKey:@"loginType"];
     if (!enable) {
         return  type_temp;
     }
@@ -105,7 +105,7 @@
 }
 + (void)LUCK_setUserType:(loginType)type{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@(type) forKey:NEDecodeOcString(OWeFSeldcMHqYvbZ,sizeof(OWeFSeldcMHqYvbZ))];
+    [defaults setObject:@(type) forKey:@"loginType"];
     [defaults synchronize];
 }
 @end

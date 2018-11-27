@@ -68,8 +68,8 @@
         negativeSpacer.width = -15;
         
         UIButton *button = [[UIButton alloc] init];
-        [button setImage:[UIImage imageNamed:NEDecodeOcString(JuLyGnDrrutWAhPG,sizeof(JuLyGnDrrutWAhPG))] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:NEDecodeOcString(OJVTkfyDELvSIkEY,sizeof(OJVTkfyDELvSIkEY))] forState:UIControlStateHighlighted];
+        [button setImage:[UIImage imageNamed:@"navigation_back_normal"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"navigation_back_hl"] forState:UIControlStateHighlighted];
         button.frame = CGRectMake(0, 0, 33, 33);
         
         if (@available(ios 11.0,*)) {

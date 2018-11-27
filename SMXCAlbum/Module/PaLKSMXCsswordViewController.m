@@ -193,7 +193,7 @@
 }
 
 - (void)LUCK_addImageToDocument:(UIImage *)image{
-    NSString *imageName = [NSString stringWithFormat:NEDecodeOcString(kvlilwYzXzLmWZOA,sizeof(kvlilwYzXzLmWZOA)),[[NSDate date] timeIntervalSince1970],arc4random()%1000000];
+    NSString *imageName = [NSString stringWithFormat:@"%f_%d",[[NSDate date] timeIntervalSince1970],arc4random()%1000000];
     [[SDImageCache sharedImageCache] storeImage:image forKey:[[imageName SAblum_base64Encode] SAblum_md5] completion:^{
         AlbumLKSMXCModel *secModel = [[LocalLKSMXCDataManager LUCK_shareInstance] LUCK_getSecretAlbumModel];
         
@@ -205,10 +205,10 @@
         model.imgName = [[imageName SAblum_base64Encode] SAblum_md5];
         model.parentId = secModel.abid;
         if (lastModel) {
-            model.pid = [NSString stringWithFormat:NEDecodeOcString(qNnfPBHoyNFHGRoA,sizeof(qNnfPBHoyNFHGRoA)),lastModel.pid.integerValue + 1];
+            model.pid = [NSString stringWithFormat:@"%ld",lastModel.pid.integerValue + 1];
         }
         else{
-            model.pid = NEDecodeOcString(faXpwnUKqAfWjVeY,sizeof(faXpwnUKqAfWjVeY));
+            model.pid = @"1000";
         }
         BOOL result = [[LocalLKSMXCDataManager LUCK_shareInstance] LUCK_insertPhotoModel:model];
         if (result) {
@@ -222,8 +222,8 @@
     model.albumName = @"入侵者抓拍";
     model.albumCount = @0;
     model.photos = @[];
-    model.isSecret = NEDecodeOcString(nyoRZBfWDXvtTxGE,sizeof(nyoRZBfWDXvtTxGE));
-    model.abid = NEDecodeOcString(CLQJBokYeTiJoQXf,sizeof(CLQJBokYeTiJoQXf));
+    model.isSecret = @"1";
+    model.abid = @"999";
     return model;
 }
 - (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{

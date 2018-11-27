@@ -55,7 +55,7 @@
     if (!_albumNameLabel) {
         _albumNameLabel = [UILabel new];
         _albumNameLabel.font = [UIFont systemFontOfSize:14];
-        _albumNameLabel.textColor = [UIColor colorWithHexString:NEDecodeOcString(IJHSIlHVCPWKyaOB,sizeof(IJHSIlHVCPWKyaOB))];
+        _albumNameLabel.textColor = [UIColor colorWithHexString:@"333333"];
         _albumNameLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _albumNameLabel;
@@ -64,7 +64,7 @@
     if (!_albumCountLabel) {
         _albumCountLabel = [UILabel new];
         _albumCountLabel.font = [UIFont systemFontOfSize:14];
-        _albumCountLabel.textColor = [UIColor colorWithHexString:NEDecodeOcString(IJHSIlHVCPWKyaOB,sizeof(IJHSIlHVCPWKyaOB))];
+        _albumCountLabel.textColor = [UIColor colorWithHexString:@"333333"];
         _albumCountLabel.textAlignment = NSTextAlignmentRight;
     }
     return _albumCountLabel;

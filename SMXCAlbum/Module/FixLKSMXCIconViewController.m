@@ -32,7 +32,7 @@
         _tableView.delegate  = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NEDecodeOcString(VhARARWouXuJiseF,sizeof(VhARARWouXuJiseF))];
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     }
     return _tableView;
 }
@@ -41,8 +41,8 @@
     [self addDefaultBackItem];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setNavBarTitle:@"伪装图标"];
-    self.iconsDataArray = @[@"Icon-1-120",@"Icon-2-120",NEDecodeOcString(NAQVseZERYpZxXQY,sizeof(NAQVseZERYpZxXQY))];
-    self.iconsKeyDataArray = @[@"icon1",@"icon2",NEDecodeOcString(WpFDhjzEAgZlpanE,sizeof(WpFDhjzEAgZlpanE))];
+    self.iconsDataArray = @[@"Icon-1-120",@"Icon-2-120",@"Icon-3-120"];
+    self.iconsKeyDataArray = @[@"icon1",@"icon2",@"icon3"];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(0);
@@ -54,7 +54,7 @@
     return self.iconsDataArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NEDecodeOcString(VhARARWouXuJiseF,sizeof(VhARARWouXuJiseF))];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     cell.imageView.image = [UIImage imageNamed:self.iconsDataArray[indexPath.row]];
     cell.textLabel.text = @"点选使用此图标";
     return cell;
