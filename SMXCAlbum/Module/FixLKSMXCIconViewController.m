@@ -50,12 +50,17 @@
     }];
     
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 90.0;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.iconsDataArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     cell.imageView.image = [UIImage imageNamed:self.iconsDataArray[indexPath.row]];
+    cell.imageView.contentMode = UIViewContentModeCenter;
+    cell.imageView.clipsToBounds = YES;
     cell.textLabel.text = @"点选使用此图标";
     return cell;
 }

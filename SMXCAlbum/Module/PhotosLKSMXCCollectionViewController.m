@@ -286,11 +286,14 @@
     }
     else{
         //预览
-  
+        PhotoLKSMXCCollectionViewCell *cell = (PhotoLKSMXCCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
             NSMutableArray *array = [NSMutableArray array];
             for (PhotoLKSMXCModel *model in self.dataArray) {
                 YBImageBrowseCellData *data = [YBImageBrowseCellData new];
-                data.sourceObject = [LKSMXCUnit LUCK_getCacheImageWithKey:model.imgName];
+                data.sourceObject = cell.imageView;
+                [data setImageBlock:^__kindof UIImage * _Nullable{
+                    return [LKSMXCUnit LUCK_getCacheImageWithKey:model.imgName];
+                }];
                 [array addObject:data];
             }
         YBImageBrowser *imageBrowser = [YBImageBrowser new];

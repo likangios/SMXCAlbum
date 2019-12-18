@@ -23,7 +23,7 @@ pod 'AFNetworking'
 pod 'CDDPagerController'
 pod 'ZYCornerRadius'
 pod 'BlocksKit', '~> 2.2.5'
-pod 'YBImageBrowser'
+pod 'YBImageBrowser', '~> 2.0'
 
 pod 'UMCCommon'
 pod 'UMCPush'
